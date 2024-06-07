@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/kilordleforbrandon/static/css/main.eba143d2.css",
+    "main.js": "/kilordleforbrandon/static/js/main.327ede87.js",
+    "index.html": "/kilordleforbrandon/index.html",
+    "main.eba143d2.css.map": "/kilordleforbrandon/static/css/main.eba143d2.css.map",
+    "main.327ede87.js.map": "/kilordleforbrandon/static/js/main.327ede87.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eba143d2.css",
+    "static/js/main.327ede87.js"
+  ]
+}
