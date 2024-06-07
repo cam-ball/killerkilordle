@@ -35,19 +35,20 @@ function App() {
   const expired = guesslist.length >= maxGuesses;
 
   function restartGame() {
-    setWordlist(generateWordlist(totalWords));
     setGuesslist([]);
     setProgressHistory([]);
     setWorking('');
   }
 
   function handleTotalChange(newTotal: number) {
+    setWordlist(generateWordlist(newTotal, expandedList));
     setTotalWords(newTotal);
     restartGame();
   }
 
-  function handleListChange(expandedList: boolean) {
-    setExpandedList(expandedList);
+  function handleListChange(newExpandedList: boolean) {
+    setWordlist(generateWordlist(totalWords, newExpandedList));
+    setExpandedList(newExpandedList);
     restartGame();
   }
 
