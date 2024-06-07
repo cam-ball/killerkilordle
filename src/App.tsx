@@ -52,7 +52,9 @@ function App() {
   }
 
   function addKey(key: string) {
-    if (key === '-' || key === 'Backspace')
+    if (key.match(/[0-9]/)) {
+      return;
+    } else if (key === '-' || key === 'Backspace')
       setWorking((tmp) => tmp.slice(0, tmp.length - 1));
     else if (
       (key === '+' || key === 'Enter') &&
