@@ -23,20 +23,32 @@ const Content = styled.div`
 
 function App() {
   const [totalWords, setTotalWords] = useState(1000);
-  const [wordlist, setWordlist] = useState(generateWordlist(totalWords));
+  const [expandedList, setExpandedList] = useState(false);
+  const [wordlist, setWordlist] = useState(
+    generateWordlist(totalWords, expandedList)
+  );
   const [guesslist, setGuesslist] = useState<string[]>([]);
   const [progressHistory, setProgressHistory] = useState<number[]>([]);
   const [working, setWorking] = useState('');
 
-  const maxGuesses = 1005;
+  const maxGuesses = totalWords + 5;
   const expired = guesslist.length >= maxGuesses;
 
-  function handleTotalChange(newTotal: number) {
-    setTotalWords(newTotal);
-    setWordlist(generateWordlist(newTotal));
+  function restartGame() {
+    setWordlist(generateWordlist(totalWords));
     setGuesslist([]);
     setProgressHistory([]);
     setWorking('');
+  }
+
+  function handleTotalChange(newTotal: number) {
+    setTotalWords(newTotal);
+    restartGame();
+  }
+
+  function handleListChange(expandedList: boolean) {
+    setExpandedList(expandedList);
+    restartGame();
   }
 
   function addKey(key: string) {
@@ -106,7 +118,9 @@ function App() {
       <Container>
         <Content>
           <Header
+            expandedList={expandedList}
             guesses={guesslist.length}
+            handleListChange={handleListChange}
             handleTotalChange={handleTotalChange}
             limit={maxGuesses}
             remaining={wordlist.length}
