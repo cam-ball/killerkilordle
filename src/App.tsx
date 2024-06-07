@@ -22,7 +22,7 @@ const Content = styled.div`
 `;
 
 function App() {
-  const totalWords = 12000;
+  const [totalWords, setTotalWords] = useState(1000);
   const [wordlist, setWordlist] = useState(generateWordlist(totalWords));
   const [guesslist, setGuesslist] = useState<string[]>([]);
   const [progressHistory, setProgressHistory] = useState<number[]>([]);
@@ -30,6 +30,14 @@ function App() {
 
   const maxGuesses = 1005;
   const expired = guesslist.length >= maxGuesses;
+
+  function handleTotalChange(newTotal: number) {
+    setTotalWords(newTotal);
+    setWordlist(generateWordlist(newTotal));
+    setGuesslist([]);
+    setProgressHistory([]);
+    setWorking('');
+  }
 
   function addKey(key: string) {
     if (key === '-' || key === 'Backspace')
@@ -99,6 +107,7 @@ function App() {
         <Content>
           <Header
             guesses={guesslist.length}
+            handleTotalChange={handleTotalChange}
             limit={maxGuesses}
             remaining={wordlist.length}
             totalWords={totalWords}
