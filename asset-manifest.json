@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/kilordleforbrandon/static/css/main.eba143d2.css",
-    "main.js": "/kilordleforbrandon/static/js/main.327ede87.js",
-    "index.html": "/kilordleforbrandon/index.html",
-    "main.eba143d2.css.map": "/kilordleforbrandon/static/css/main.eba143d2.css.map",
-    "main.327ede87.js.map": "/kilordleforbrandon/static/js/main.327ede87.js.map"
+    "main.css": "/killerkilordle/static/css/main.eba143d2.css",
+    "main.js": "/killerkilordle/static/js/main.c7722eb1.js",
+    "index.html": "/killerkilordle/index.html",
+    "main.eba143d2.css.map": "/killerkilordle/static/css/main.eba143d2.css.map",
+    "main.c7722eb1.js.map": "/killerkilordle/static/js/main.c7722eb1.js.map"
   },
   "entrypoints": [
     "static/css/main.eba143d2.css",
-    "static/js/main.327ede87.js"
+    "static/js/main.c7722eb1.js"
   ]
 }
