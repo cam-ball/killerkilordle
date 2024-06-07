@@ -2308,11 +2308,6 @@ export const WORDLES = [
   'artsy',
   'rural',
   'shave',
-];
-
-export const NUM_WORDLES = WORDLES.length;
-
-export const WORDS = [
   'aahed',
   'aalii',
   'aargh',
@@ -12952,3 +12947,6 @@ export const WORDS = [
   'zymes',
   'zymic',
 ];
+
+export const WORDS = WORDLES;
+export const NUM_WORDLES = WORDLES.length;

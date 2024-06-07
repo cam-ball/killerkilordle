@@ -21,21 +21,23 @@ function Header({
   remaining,
   guesses,
   limit,
+  totalWords,
 }: {
   remaining: number;
   guesses: number;
   limit: number;
+  totalWords: number;
 }) {
   return (
     <Container>
       <Title>
-        Kilordle by{' '}
-        <a href="https://github.com/jonesnxt/kilordle" target="_blank">
+        Kilordle originally by{' '}
+        <a href="https://github.com/jonesnxt/kilordle" target="_blank" rel="noreferrer">
           jones
         </a>
       </Title>
       <Stats>
-        Guesses: {guesses}/{limit} | Remaining: {remaining}/1000
+        Guesses: {guesses}/{limit} | Remaining: {remaining}/{totalWords}
       </Stats>
     </Container>
   );

@@ -22,7 +22,7 @@ const Content = styled.div`
 `;
 
 function App() {
-  const totalWords = 1000;
+  const totalWords = 12000;
   const [wordlist, setWordlist] = useState(generateWordlist(totalWords));
   const [guesslist, setGuesslist] = useState<string[]>([]);
   const [progressHistory, setProgressHistory] = useState<number[]>([]);
@@ -101,6 +101,7 @@ function App() {
             guesses={guesslist.length}
             limit={maxGuesses}
             remaining={wordlist.length}
+            totalWords={totalWords}
           />
           <Puzzles
             expired={expired}
